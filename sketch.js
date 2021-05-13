@@ -86,6 +86,9 @@ else if(ran ==0){
 }
 function runner(){
      if (keyDown("Space")){
+       if(player.position.y <150){
+         player.velocity.y=0;
+       }
     player.velocity.y=-12;
     }
  else if (player.position.y <330)
