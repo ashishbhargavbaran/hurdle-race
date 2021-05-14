@@ -111,12 +111,10 @@ function runner(){
   if(player.overlap(st1)){
     st1.velocity.x = 0;
      coin1.velocity.x=0;
-    coin1.destroy();
-    player.destroy();
-    st1.destroy();
-//      coin1.visible= false;
-//      player.visible= false;
-//      st1.visible = false;
+    coin1.position.x = 500;
+      coin1.visible= false;
+      player.visible= false;
+      st1.visible = false;
     gamestat = true;
   } 
 }
