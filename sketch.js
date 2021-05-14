@@ -46,14 +46,14 @@ else if(ran ==0){
 }
 function draw() {
  
+  coins();
+   hurdle();
+   runner(); 
   backgr.scale  = 2;
   backgr.velocity.x=-2-score*0.2;
   if(backgr.position.x <-200){
     backgr.position.x = 850
   }
-  coins();
-   hurdle();
-   runner(); 
   drawSprites();
   if(timer>0 ){
     textSize(30);
