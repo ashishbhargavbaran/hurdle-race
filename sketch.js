@@ -4,6 +4,7 @@ let stone1, stone2, stone3, stone4, ran;
 let gravity = 0;
 let gamestat =false;
 let score= 0;
+let timer= 2;
 function preload(){
   player_running = loadAnimation("1.png","2.png","3.png","4.png","5.png","6.png");
   backgr1 = loadImage("fcqYEC.png");
@@ -54,6 +55,13 @@ function draw() {
    hurdle();
    runner(); 
   drawSprites();
+  if(timer>0 ){
+    textSize(30);
+        text("Press Space to Jump",200,200);
+     }
+  if(frameCount % 60 == 0 && timer >0){
+   timer--;
+ }
   textSize(30);
   text("Score "+score+"",10,30); 
   if(gamestat){
