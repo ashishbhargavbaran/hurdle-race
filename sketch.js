@@ -45,11 +45,18 @@ else if(ran ==0){
 }
 }
 function draw() {
- 
   coins();
    hurdle();
    runner(); 
- back();
+  if(gamestat){
+  backgr.velocity.x=0;
+  }
+  else{
+  backgr.scale  = 2;
+  backgr.velocity.x=-2-score*0.2;
+  if(backgr.position.x <-200){
+    backgr.position.x = 850
+  }}
   drawSprites();
   if(timer>0 ){
     textSize(30);
@@ -102,15 +109,11 @@ function runner(){
   player.velocity.y=0;
 }
   if(player.overlap(st1)){
-    backgr.velocity.x=0;
     st1.velocity.x = 0;
      coin1.velocity.x=0;
-    coin1.remove();
-    player.remove();
-    st1.remove();
-//     coin1.visible= false;
-//     player.visible= false;
-//     st1.visible = false;
+     coin1.visible= false;
+     player.visible= false;
+     st1.visible = false;
     gamestat = true;
   } 
 }
@@ -126,10 +129,4 @@ coin1.position.x =700;
   }
 }
 
-function back(){
- backgr.scale  = 2;
-  backgr.velocity.x=-2-score*0.2;
-  if(backgr.position.x <-200){
-    backgr.position.x = 850
-  }
-}
+
