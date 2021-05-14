@@ -108,10 +108,13 @@ function runner(){
   if(player.overlap(st1)){
     backgr.velocity.x=0;
     st1.velocity.x = 0;
-    coin1.velocity.x=0;
-    coin1.visible= false;
-    player.visible= false;
-    st1.visible = false;
+     coin1.velocity.x=0;
+    coin1.remove();
+    player.remove();
+    st1.remove();
+//     coin1.visible= false;
+//     player.visible= false;
+//     st1.visible = false;
     gamestat = true;
   } 
 }
