@@ -49,11 +49,7 @@ function draw() {
   coins();
    hurdle();
    runner(); 
-  backgr.scale  = 2;
-  backgr.velocity.x=-2-score*0.2;
-  if(backgr.position.x <-200){
-    backgr.position.x = 850
-  }
+ back();
   drawSprites();
   if(timer>0 ){
     textSize(30);
@@ -130,3 +126,10 @@ coin1.position.x =700;
   }
 }
 
+function back(){
+ backgr.scale  = 2;
+  backgr.velocity.x=-2-score*0.2;
+  if(backgr.position.x <-200){
+    backgr.position.x = 850
+  }
+}
