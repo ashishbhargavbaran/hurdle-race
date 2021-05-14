@@ -48,10 +48,10 @@ function draw() {
   coins();
    hurdle();
    runner(); 
-  if(gamestat){
+  if(gamestat == true){
   backgr.velocity.x=0;
   }
-  else{
+  else if(gamestat ==false){
   backgr.scale  = 2;
   backgr.velocity.x=-2-score*0.2;
   if(backgr.position.x <-200){
