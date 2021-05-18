@@ -23,13 +23,13 @@ function setup() {
   coin1 = createSprite(200,200);
   coin1.addImage(coin);
   coin1.scale=0.15;
-  player = createSprite(100,330); 
+  player = createSprite(100,330);
   player.addAnimation("player_running",player_running);
   player.scale=0.2;
   st1= createSprite(700,370);
   st1.scale=0.2;
   st1.setCollider("circle",0,0,200);
-  ran = int(random(3)); 
+  ran = int(random(3));
   if(ran ==1){
     st1.addImage(stone1);
   }
@@ -47,7 +47,7 @@ else if(ran ==0){
 function draw() {
   coins();
    hurdle();
-   runner(); 
+   runner();
   if(gamestat == true){
   backgr.velocity.x=0;
   }
@@ -66,10 +66,10 @@ function draw() {
    timer--;
  }
   textSize(30);
-  text("Score "+score+"",10,30); 
+  text("Score "+score+"",10,30);
   if(gamestat){
     fill(255,123,240);
-        textSize(72); 
+        textSize(72);
     text("Game Over",width/4, height/2);
   }
 }
@@ -77,7 +77,7 @@ function draw() {
 function hurdle(){
 st1.velocity.x = -2-score*0.2;
   if(st1.position.x <0){
-    ran = int(random(3)); 
+    ran = int(random(3));
   if(ran ==1){
     st1.addImage(stone1);
   }
@@ -91,8 +91,8 @@ st1.velocity.x = -2-score*0.2;
 else if(ran ==0){
   st1.addImage(stone4);
 }
-    
-    st1.position.x =700;     
+
+    st1.position.x =700;
   }
 }
 function runner(){
@@ -116,18 +116,16 @@ function runner(){
       player.visible= false;
       st1.visible = false;
     gamestat = true;
-  } 
+  }
 }
 function coins(){
   coin1.velocity.x = -2-score*0.2;
   if(coin1.position.x <0){
-    coin1.position.x =700; 
+    coin1.position.x =700;
   }
   if(player.overlap(coin1)){
     gamesound.play();
-coin1.position.x =700; 
-    score+=1;   
+coin1.position.x =700;
+    score+=1;
   }
 }
-
-
